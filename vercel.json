@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd apps/corporate && pnpm run build",
+  "outputDirectory": "apps/corporate/.next",
+  "framework": "nextjs"
+}
