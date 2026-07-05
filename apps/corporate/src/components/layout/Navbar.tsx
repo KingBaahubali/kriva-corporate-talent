@@ -109,7 +109,7 @@ export function Navbar() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: "72px",
+          height: "88px",
         }}
       >
         {/* Logo */}
@@ -118,7 +118,7 @@ export function Navbar() {
           aria-label="Kriva Tech — Home"
           style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
         >
-          <KrivaLogo height={30} />
+          <KrivaLogo height={64} />
         </Link>
 
         {/* Division nav — desktop */}
@@ -307,7 +307,7 @@ export function Navbar() {
         <div
           className="mobile-drawer"
           style={{
-            position: "absolute", top: "72px", left: 0, width: "100%", height: "calc(100dvh - 72px)", backgroundColor: "var(--canvas)", overflowY: "auto", borderTop: "1px solid var(--divider)",
+            position: "absolute", top: "88px", left: 0, width: "100%", height: "calc(100dvh - 88px)", backgroundColor: "var(--canvas)", overflowY: "auto", borderTop: "1px solid var(--divider)",
           }}
         >
           <div className="container" style={{ paddingBlock: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
