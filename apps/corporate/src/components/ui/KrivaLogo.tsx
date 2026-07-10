@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 
 interface KrivaLogoProps {
@@ -7,14 +8,12 @@ interface KrivaLogoProps {
 }
 
 export function KrivaLogo({ variant = "full", height = 40, className = "" }: KrivaLogoProps) {
-  // Using the actual logo.png image
-  // The original image is 1024x576 (16:9 aspect ratio)
   // We'll scale the width automatically based on the height
   const width = Math.round(height * (1024 / 576));
 
   return (
     <div 
-      className={`relative flex items-center justify-center bg-white rounded-lg overflow-hidden shadow-sm ${className}`}
+      className={`relative flex items-center justify-center overflow-hidden ${className}`}
       style={{ height: height + 4, width: width + 8 }}
     >
       <div className="relative flex items-center justify-center" style={{ height, width }}>

@@ -96,9 +96,9 @@ export function Navbar() {
         top: 0,
         zIndex: 50,
         padding: "0",
-        backgroundColor: scrolled || mobileMenuOpen ? "color-mix(in srgb, var(--canvas) 90%, transparent)" : "transparent",
-        backdropFilter: scrolled || mobileMenuOpen ? "blur(16px)" : "none",
-        WebkitBackdropFilter: scrolled || mobileMenuOpen ? "blur(16px)" : "none",
+        backgroundColor: scrolled || mobileMenuOpen ? "color-mix(in srgb, var(--canvas) 70%, transparent)" : "transparent",
+        backdropFilter: scrolled || mobileMenuOpen ? "blur(24px)" : "none",
+        WebkitBackdropFilter: scrolled || mobileMenuOpen ? "blur(24px)" : "none",
         borderBottom: scrolled || mobileMenuOpen ? "1px solid var(--divider)" : "1px solid transparent",
         transition: "background-color 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease",
       }}
