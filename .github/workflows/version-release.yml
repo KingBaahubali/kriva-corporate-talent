@@ -1,0 +1,33 @@
+name: Tag release commit
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    if: startsWith(github.event.head_commit.message, 'Release v')
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+    steps:
+      - name: Create the version tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          subject=${COMMIT_MESSAGE%%$'\n'*}
+          if [[ ! $subject =~ ^Release\ (v[0-9]+\.[0-9]+): ]]; then
+            echo 'Expected commit subject: Release v1.05: description' >&2
+            exit 1
+          fi
+          tag=${BASH_REMATCH[1]}
+          endpoint="repos/$GITHUB_REPOSITORY/git/refs"
+          if gh api --method POST "$endpoint" -f "ref=refs/tags/$tag" -f "sha=$GITHUB_SHA" --silent; then
+            exit 0
+          fi
+          existing=$(gh api "${endpoint%refs}ref/tags/$tag" --jq .object.sha)
+          [[ "$existing" == "$GITHUB_SHA" ]]

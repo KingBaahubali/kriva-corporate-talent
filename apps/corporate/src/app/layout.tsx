@@ -65,10 +65,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/peacock-icon.png", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/peacock-icon.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -78,7 +77,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Kriva Technologies",
   url: "https://krivatech.com",
-  logo: "https://krivatech.com/logo.svg",
+  logo: "https://krivatech.com/logo.png",
   description:
     "Multi-divisional technology and operations company specializing in AI training data, cloud infrastructure, software engineering, IT operations, and tech staffing.",
   address: [

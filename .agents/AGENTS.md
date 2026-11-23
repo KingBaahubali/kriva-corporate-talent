@@ -9,3 +9,9 @@
    - If the user likes it, the agent will merge the branch into `main`.
    - If the user dislikes it, the agent will discard the branch and revert to `main`.
 5. **No Unauthorized Commits to Main:** Do not commit directly to `main` without asking. All work goes to a branch first, and merges only happen on approval.
+
+## Release Versioning
+
+- Give every release push a new version tag, even for the smallest change. Continue the existing sequence (`v1.04`, `v1.05`, and so on).
+- For GitHub API updates to `main`, use a commit subject like `Release v1.05: Update site logo`. GitHub Actions tags the exact commit. When using authenticated Git, push `main` and the corresponding new tag together.
+- Push the versioned commit to GitHub and verify it there before deploying to Vercel. Deploy that exact commit and verify the production deployment.

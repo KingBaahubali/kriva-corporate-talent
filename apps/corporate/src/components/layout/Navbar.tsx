@@ -115,7 +115,7 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          aria-label="Kriva Tech — Home"
+          aria-label="Kriva Talent — Home"
           style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
         >
           <KrivaLogo height={64} />
